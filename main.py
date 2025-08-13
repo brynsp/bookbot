@@ -2,7 +2,7 @@ import sys
 from stats import get_num_words, get_chars_dict, chars_dict_to_sorted_list
 
 
-def main():
+def main() -> None:
     if len(sys.argv) != 2:
         print("Usage: python3 main.py <path_to_book>")
         return sys.exit(1)
@@ -14,12 +14,12 @@ def main():
     print_report(book_path, num_words, chars_sorted_list)
     
     
-def get_book_text(filepath):
+def get_book_text(filepath: str) -> str:
     with open(filepath) as f:
         return f.read()
     
     
-def print_report(book_path, num_words, chars_sorted_list):
+def print_report(book_path, num_words, chars_sorted_list) -> None:
     print('============ BOOKBOT ============')
     print(f'Analyzing book found at {book_path}…')
     print('----------- Word Count ----------')
